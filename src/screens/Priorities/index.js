@@ -5,10 +5,12 @@ import { useNavigation } from '@react-navigation/native'
 import styles from './styles';
 import { openDatabase } from "react-native-sqlite-storage"
 
-const shopperDB = openDatabase({name: 'Shopper.db'});
+const myRemindersDB = openDatabase({name: 'myReminders.db'});
 const prioritiesTableName = 'Priorities';
 
 const PrioritiesScreen = props => {
+
+  const navigation = useNavigation();
 
   const [priorities, setPriorities] = useState([]);
 
@@ -19,7 +21,7 @@ const PrioritiesScreen = props => {
       //SELECT
       let results = [];
       // declare a transaction that will execute the SELECT
-      shopperDB.transaction(txn => {
+      myRemindersDB.transaction(txn => {
         
         //execute SELECT
         txn.executeSql(

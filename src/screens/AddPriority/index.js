@@ -26,7 +26,7 @@ const AddPriorityScreen = props => {
         
                 
                 alert(title + ' Added ');//Alert List has been added
-                console.log('Start Shopping!');
+                console.log('Get Priorities!');
 
         }
   return (
@@ -37,7 +37,7 @@ const AddPriorityScreen = props => {
                         onChangeText={value => setTitle(value)}
                         style={styles.title}
                         clearButtonMode={'while-editing'}
-                        placeholder={'Enter Item Title'}
+                        placeholder={'Enter Priority Title'}
                         placeholderTextColor={'grey'}
                 />
                 <TextInput  

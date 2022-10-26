@@ -56,13 +56,13 @@ module.exports = {
 
 createPrioritiesTable: async function () {
     //Declare a transaction that will execute a SQL statement
-    (await shopperDB).transaction(txn => {
+    (await myRemindersDB).transaction(txn => {
             //Execute the SQL
             txn.executeSql(
                     `CREATE TABLE IF NOT EXISTS ${prioritiesTableName}(
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
-                            priority TEXT(100),
-                            Description TEXT(100),
+                            title TEXT(100),
+                            description TEXT(100)
                     );`,
                     //ARGUMENTS NEEDED WHEN USING  an SQL prepared statemtn
                     [],
@@ -81,7 +81,7 @@ createPrioritiesTable: async function () {
 
 addPriorities: async function (title, description) {
     //Insert a row into the items table
-    (await shopperDB).transaction(txn => {
+    (await myRemindersDB).transaction(txn => {
             //execute the SQL
             txn.executeSql(
                     `INSERT INTO ${prioritiesTableName} (title, description) VALUES ("${title}", "${description}")`,
