@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 import styles from './styles';
 import { openDatabase } from "react-native-sqlite-storage"
 
-const myRemindersDB = openDatabase({name: 'myReminders.db'});
+const myRemindersDB = openDatabase({name: 'MyReminders.db'});
 const prioritiesTableName = 'Priorities';
 
 const PrioritiesScreen = props => {
@@ -32,7 +32,7 @@ const PrioritiesScreen = props => {
             
             // get number of rows of data selected 
             let len = res.rows.length;
-            console.log('Length of Items ' + len);
+            console.log('Length of Priorities ' + len);
             // check if more than one ro was returned
             if (len > 0) {
               // loop through the rows 
@@ -54,7 +54,7 @@ const PrioritiesScreen = props => {
             }
           },
           error => {
-            console.log('Error getting Items  ' + error.message);
+            console.log('Error getting Priorities  ' + error.message);
           },
         )
       });

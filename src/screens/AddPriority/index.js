@@ -43,9 +43,9 @@ const AddPriorityScreen = props => {
                 <TextInput  
                         value={description}
                         onChangeText={value => setDescription(value)}
-                        style={styles.price}
+                        style={styles.description}
                         clearButtonMode={'while-editing'}
-                        placeholder={'Enter Description'}
+                        placeholder={'Enter Priority Description'}
                         placeholderTextColor={'grey'}
                 />
                 </View>
