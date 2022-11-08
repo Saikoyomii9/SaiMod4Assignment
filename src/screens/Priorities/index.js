@@ -54,7 +54,7 @@ const PrioritiesScreen = props => {
             }
           },
           error => {
-            console.log('Error getting Priorities  ' + error.message);
+            console.log('Error getting My Priorities  ' + error.message);
           },
         )
       });
